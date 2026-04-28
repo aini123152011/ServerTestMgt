@@ -1,0 +1,33 @@
+# Jinja2 Kickstart template for RHEL 9 / CentOS Stream 9
+lang en_US.UTF-8
+keyboard us
+timezone UTC
+rootpw --plaintext changeme
+network --bootproto=static --ip={{ ip }} --hostname={{ hostname }} --activate
+bootloader --location=mbr
+clearpart --all --initlabel
+autopart
+text
+
+%packages
+@core
+python3
+openssh-server
+{% for pkg in custom_packages %}
+{{ pkg }}
+{% endfor %}
+%end
+
+%post --log=/root/ks-post.log
+# Register with ServerTestLab
+curl -X POST {{ callback_url }} \
+  -H "Content-Type: application/json" \
+  -d '{"provision_job_id": {{ provision_job_id | default(0) }}, "status": "completed", "message": "Installation complete"}'
+
+# Install test agent
+{% if post_install_script %}
+{{ post_install_script }}
+{% endif %}
+%end
+
+reboot

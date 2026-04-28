@@ -21,6 +21,25 @@
           <el-icon><List /></el-icon>
           <span>测试任务</span>
         </el-menu-item>
+        <el-menu-item index="/provision">
+          <el-icon><Upload /></el-icon>
+          <span>PXE 装机</span>
+        </el-menu-item>
+        <el-menu-item index="/firmware">
+          <el-icon><UploadFilled /></el-icon>
+          <span>固件升级</span>
+        </el-menu-item>
+        <el-menu-item index="/operations">
+          <el-icon><Tools /></el-icon>
+          <span>运维工具</span>
+        </el-menu-item>
+        <el-sub-menu index="settings">
+          <template #title>
+            <el-icon><Setting /></el-icon>
+            <span>设置</span>
+          </template>
+          <el-menu-item index="/settings/cicd">CI/CD 集成</el-menu-item>
+        </el-sub-menu>
       </el-menu>
     </el-aside>
     <el-container>
@@ -39,7 +58,7 @@
 <script setup lang="ts">
 import { onMounted } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
-import { Monitor, Cpu, Calendar, List } from '@element-plus/icons-vue'
+import { Monitor, Cpu, Calendar, List, Upload, UploadFilled, Tools, Setting } from '@element-plus/icons-vue'
 import { useAuthStore } from '@/stores/auth'
 
 const route = useRoute()

@@ -1,0 +1,19 @@
+# Jinja2 Preseed template for Ubuntu 22.04
+d-i debian-installer/locale string en_US.UTF-8
+d-i keyboard-configuration/xkb-keymap select us
+d-i netcfg/choose_interface select auto
+d-i netcfg/get_hostname string {{ hostname }}
+d-i netcfg/get_ipaddress string {{ ip }}
+d-i partman-auto/method string regular
+d-i partman-auto/choose_recipe select atomic
+d-i partman/confirm boolean true
+d-i partman/confirm_nooverwrite boolean true
+d-i passwd/root-password-crypted password $6$rounds=4096$salt$hash
+d-i pkgsel/include string python3 openssh-server {% for pkg in custom_packages %}{{ pkg }} {% endfor %}
+
+d-i finish-install/reboot_in_progress note
+
+d-i preseed/late_command string \
+  in-target curl -X POST {{ callback_url }} -H "Content-Type: application/json" -d '{"provision_job_id": {{ provision_job_id | default(0) }}, "status": "completed", "message": "Installation complete"}'; \
+  {% if post_install_script %}in-target bash -c '{{ post_install_script }}';{% endif %} \
+  true
