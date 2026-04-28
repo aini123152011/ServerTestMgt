@@ -1,6 +1,9 @@
 from datetime import datetime
+from typing import Generic, TypeVar
 
 from pydantic import BaseModel
+
+T = TypeVar("T")
 
 
 class PageParams(BaseModel):
@@ -8,7 +11,7 @@ class PageParams(BaseModel):
     size: int = 20
 
 
-class PageResult[T](BaseModel):
+class PageResult(BaseModel, Generic[T]):
     items: list[T]
     total: int
     page: int
