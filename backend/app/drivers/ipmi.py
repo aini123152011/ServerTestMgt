@@ -182,6 +182,5 @@ class IPMIDriver(HardwareDriver):
         bmc_ver = fw[0].version if fw else None
         return HardwareInventory(
             bmc_version=bmc_ver,
-            product_manufacturer=fru.product_manufacturer,
-            product_name=fru.product_name,
+            cpu_model=fru.product_name,
         )

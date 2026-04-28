@@ -10,6 +10,10 @@ from app.core.security import hash_password
 from app.models.base import Base
 from app.models.device import Device  # noqa: F401
 from app.models.reservation import Reservation  # noqa: F401
+from app.models.job import TestJob, TestJobLog  # noqa: F401
+from app.models.provision import ProvisionJob  # noqa: F401
+from app.models.firmware import FirmwareJob  # noqa: F401
+from app.models.api_key import APIKey  # noqa: F401
 from app.models.user import User, UserRole
 
 

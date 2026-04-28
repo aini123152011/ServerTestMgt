@@ -13,5 +13,5 @@ celery_app.conf.update(
     result_expires=604800,
     broker_transport_options={"visibility_timeout": 90000},
     beat_schedule={},
-    imports=["app.workers.test_tasks", "app.workers.bmc_tasks"],
+    imports=["app.workers.test_tasks", "app.workers.bmc_tasks", "app.workers.webhook_tasks"],
 )
