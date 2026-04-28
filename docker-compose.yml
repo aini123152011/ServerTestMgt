@@ -30,7 +30,7 @@ services:
       context: ./backend
       dockerfile: Dockerfile
     ports:
-      - "8000:8000"
+      - "8888:8000"
     environment:
       DATABASE_URL: postgresql+asyncpg://stl:stl_dev_password@db:5432/servertestlab
       REDIS_URL: redis://redis:6379/0
