@@ -1,1 +1,16 @@
-{"_example": "Fill with {\"file\": \"<path>\", \"reason\": \"<why>\"}. Put spec/research files only — no code paths. Run `python3 .trellis/scripts/get_context.py --mode packages` to list available specs. Delete this line once real entries are added."}
+{"file": ".trellis/spec/backend/index.md", "reason": "Backend development guidelines index"}
+{"file": ".trellis/spec/backend/directory-structure.md", "reason": "Module organization conventions"}
+{"file": ".trellis/spec/backend/error-handling.md", "reason": "Error handling patterns"}
+{"file": ".trellis/spec/backend/database-guidelines.md", "reason": "ORM and query patterns"}
+{"file": ".trellis/spec/backend/logging-guidelines.md", "reason": "Structured logging conventions"}
+{"file": ".trellis/spec/backend/quality-guidelines.md", "reason": "Code quality standards"}
+{"file": ".trellis/spec/frontend/index.md", "reason": "Frontend development guidelines index"}
+{"file": ".trellis/spec/frontend/component-guidelines.md", "reason": "Vue component patterns"}
+{"file": ".trellis/spec/frontend/state-management.md", "reason": "Pinia state management conventions"}
+{"file": ".trellis/spec/frontend/type-safety.md", "reason": "TypeScript type safety rules"}
+{"file": ".trellis/spec/guides/cross-layer-thinking-guide.md", "reason": "Cross-layer data flow consistency"}
+{"file": ".trellis/spec/guides/code-reuse-thinking-guide.md", "reason": "Code reuse patterns"}
+{"file": ".trellis/tasks/04-28-bmc-test-platform/prd.md", "reason": "Full PRD with architecture, tech stack, and implementation phases"}
+{"file": ".trellis/tasks/04-28-bmc-test-platform/research/tech-stack.md", "reason": "Tech stack decisions: FastAPI+Celery+Vue3+PG+Redis"}
+{"file": ".trellis/tasks/04-28-bmc-test-platform/research/similar-platforms.md", "reason": "LAVA/Ironic/labgrid patterns to borrow"}
+{"file": ".trellis/tasks/04-28-bmc-test-platform/research/bmc-tools.md", "reason": "IPMI/Redfish/PXE/PDU/RAS tool chain details"}
