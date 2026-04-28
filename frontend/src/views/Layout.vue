@@ -17,6 +17,10 @@
           <el-icon><Calendar /></el-icon>
           <span>设备预约</span>
         </el-menu-item>
+        <el-menu-item index="/jobs">
+          <el-icon><List /></el-icon>
+          <span>测试任务</span>
+        </el-menu-item>
       </el-menu>
     </el-aside>
     <el-container>
@@ -35,7 +39,7 @@
 <script setup lang="ts">
 import { onMounted } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
-import { Monitor, Cpu, Calendar } from '@element-plus/icons-vue'
+import { Monitor, Cpu, Calendar, List } from '@element-plus/icons-vue'
 import { useAuthStore } from '@/stores/auth'
 
 const route = useRoute()

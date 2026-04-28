@@ -9,6 +9,7 @@ from app.models.base import Base
 from app.models.user import User  # noqa: F401
 from app.models.device import Device  # noqa: F401
 from app.models.reservation import Reservation  # noqa: F401
+from app.models.job import TestJob, TestJobLog  # noqa: F401
 
 config = context.config
 config.set_main_option("sqlalchemy.url", settings.DATABASE_URL)
