@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python ./.trellis/scripts/task.py create \"brainstorm: BMC服务器测试平台\" --slug bmc-test-platform)",
+      "Bash(git add *)"
+    ]
+  }
+}
